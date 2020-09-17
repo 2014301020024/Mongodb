@@ -8,7 +8,7 @@ from pymatgen.analysis.structure_matcher import StructureMatcher
 from pymongo import MongoClient
 
 # ---------------------------------------------------------------------------------------------------------------------
-link = pymongo.MongoClient('mongodb://Yuze:zeyu@10.104.0.1/webdev')
+link = pymongo.MongoClient('mongodb://xx:xx@xx/xx')
 db = link.webdev
 
 def data_excel(lst):
@@ -29,13 +29,13 @@ def data_excel(lst):
     symbol = link
     df2 = pd.DataFrame(data, index=symbol)
     print(df2)
-    with open('/Users/yuze/Desktop/Breath_Kagome.xls', 'a') as file:
+    with open('xx.xls', 'a') as file:
         file.close()
-    df2.to_excel('/Users/yuze/Desktop/Breath_Kagome.xls')
+    df2.to_excel('xx.xls')
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-with open('/Users/yuze/Desktop/Breath_Kagome.txt', "r") as file:
+with open('xx.txt', "r") as file:
     total = eval(file.read())
 struct_ids = [i["struct_id"] for i in total]
 
@@ -66,14 +66,3 @@ for i, j in enumerate(struct_ids):
         lst.append(insert)
         print(lst)
     data_excel(lst)
-
-
-
-
-
-
-
-
-
-
-
